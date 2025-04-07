@@ -3,8 +3,15 @@ import TextField from "../TextField/TextField";
 import Title from "../Title/title";
 
 const TodoField = () => {
+    const handleTodoSubmit = (e) =>{
+        e.preventDefault();
+        const form = e.target;
+        const title = form.title.value;
+        const description = form.description.value;
+        console.table({title, description});
+    }
     return (
-        <div className="flex bg-[#343434] p-4 md:p-8 flex-col md:flex-row gap-4 items-center justify-between">
+        <form onSubmit={handleTodoSubmit} className="flex border-b border-b-white pb-6 mb-6 flex-col md:flex-row gap-4 items-center justify-between">
             <div className="md:w-1/2">
                 <Title text={"Title"}/>
                 <TextField 
@@ -20,11 +27,12 @@ const TodoField = () => {
                 />
             </div>
             <Button 
+                type={"submit"}
                 className={"md:mt-11 hover:bg-green-600"}
                 bgColor={"bg-green-500"}
                 innerText={"Add"}    
             />
-        </div>
+        </form>
     );
 };
 

@@ -1,6 +1,6 @@
 const TextField = ({placeholder, name}) => {
     return (
-        <input type="text" className="bg-white w-full text-black p-2" placeholder={placeholder} name={name} />
+        <input className="bg-white outline-green-600 w-full text-black p-2" placeholder={placeholder} name={name} />
     );
 };
 
