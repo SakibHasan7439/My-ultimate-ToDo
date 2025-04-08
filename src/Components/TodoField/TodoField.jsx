@@ -1,4 +1,4 @@
-import { saveItem } from "../../utils/localStorage";
+import { getItem, saveItem } from "../../utils/localStorage";
 import Button from "../Button/Button";
 import TextField from "../TextField/TextField";
 import Title from "../Title/title";
@@ -12,6 +12,7 @@ const TodoField = () => {
         const status = "todo";
         const newTodoTask = {title, description, status};
         saveItem(newTodoTask);
+        getItem();
         form.reset(); 
     }
     return (
