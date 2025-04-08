@@ -1,3 +1,4 @@
+import { saveItem } from "../../utils/localStorage";
 import Button from "../Button/Button";
 import TextField from "../TextField/TextField";
 import Title from "../Title/title";
@@ -8,7 +9,10 @@ const TodoField = () => {
         const form = e.target;
         const title = form.title.value;
         const description = form.description.value;
-        console.table({title, description});
+        const status = "todo";
+        const newTodoTask = {title, description, status};
+        saveItem(newTodoTask);
+        form.reset(); 
     }
     return (
         <form onSubmit={handleTodoSubmit} className="flex border-b border-b-white pb-6 mb-6 flex-col md:flex-row gap-4 items-center justify-between">

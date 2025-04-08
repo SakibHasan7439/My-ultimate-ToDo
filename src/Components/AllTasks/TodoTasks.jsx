@@ -1,3 +1,4 @@
+import { getItem } from "../../utils/localStorage";
 import TaskCard from "./TaskCard";
 
 const TodoTasks = () => {
@@ -14,7 +15,9 @@ const TodoTasks = () => {
            "title": "Collaborate with team leader",
             "description": "Need to collaborate with team leader about our final checkup before publishing",
         }
-    ]
+    ];
+
+    console.log(getItem());
     return (
         <div className="text-white">
             {
