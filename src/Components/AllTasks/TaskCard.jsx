@@ -1,6 +1,6 @@
 import { AiOutlineDelete } from "react-icons/ai";
 
-const TaskCard = ({task}) => {
+const TaskCard = ({task, handleDeleteTask, index}) => {
     const {title, description} = task;
     return (
         <div className="p-4 flex items-center justify-between bg-[#3f3f3f] shadow-lg mb-4">
@@ -11,7 +11,7 @@ const TaskCard = ({task}) => {
                 <p className="text-gray-400 text-sm">{description}</p>
             </div>
             <div className="flex items-center gap-2">
-                <AiOutlineDelete className="text-2xl cursor-pointer hover:text-green-500 md:text-3xl"/>
+                <AiOutlineDelete onClick={()=>handleDeleteTask(index)} className="text-2xl cursor-pointer hover:text-green-500 md:text-3xl"/>
                 <form>
                     <input type="checkbox" className="w-5 cursor-pointer mt-2 h-5 accent-green-500 ring-green-300" />
                 </form>

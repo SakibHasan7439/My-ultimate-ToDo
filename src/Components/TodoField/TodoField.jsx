@@ -1,9 +1,8 @@
-import { getItem, saveItem } from "../../utils/localStorage";
 import Button from "../Button/Button";
 import TextField from "../TextField/TextField";
 import Title from "../Title/title";
 
-const TodoField = () => {
+const TodoField = ({updateTodoList, todos}) => {
     const handleTodoSubmit = (e) =>{
         e.preventDefault();
         const form = e.target;
@@ -11,8 +10,7 @@ const TodoField = () => {
         const description = form.description.value;
         const status = "todo";
         const newTodoTask = {title, description, status};
-        saveItem(newTodoTask);
-        getItem();
+        updateTodoList([...todos, newTodoTask]);
         form.reset(); 
     }
     return (

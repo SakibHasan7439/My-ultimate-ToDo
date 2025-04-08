@@ -1,20 +1,20 @@
-import { useEffect, useState } from "react";
-import { getItem } from "../../utils/localStorage";
 import TaskCard from "./TaskCard";
 
-const TodoTasks = () => {
-    const [todos, setTodos] = useState([]);
-    useEffect(()=>{
-        const todoTasks =  getItem();
-        setTodos(todoTasks);
-    }, []);
+const TodoTasks = ({todos, updateTodoList}) => {
+
+    const handleDeleteTask = (index) =>{
+        const updatedTasks = todos.filter((_, ind) => ind !== index);
+        updateTodoList(updatedTasks);
+    }
 
     return (
         <div className="text-white">
             {
                 todos.map((task, index) => <TaskCard 
+                    handleDeleteTask={handleDeleteTask}
                     task={task}
                     key={index}
+                    index={index}
                 ></TaskCard>)
             }
         </div>

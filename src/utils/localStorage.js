@@ -4,8 +4,5 @@ export const getItem = () =>{
 }
 
 export const saveItem = (todo) =>{
-    const existingTask = getItem();
-    const updatedStorage = [...existingTask, todo];
-    const makeStringify = JSON.stringify(updatedStorage);
-    localStorage.setItem("task", makeStringify);
+    localStorage.setItem("task", JSON.stringify(todo));
 }
