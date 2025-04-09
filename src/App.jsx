@@ -14,7 +14,7 @@ function App() {
     saveItem(newTodos); //adding data to localstorage
   }
   return (
-    <div className='bg-[#1b1b1b] pb-20'>
+    <div className='bg-[#1b1b1b] h-screen pb-20'>
       <div className='max-w-4xl w-full mx-auto'>
         <h1 className='text-center pt-4 text-2xl text-white md:text-3xl font-bold mb-6'>
           Add Your <span className='uppercase text-green-500'>todo</span>
@@ -26,12 +26,12 @@ function App() {
           <div className='flex items-center mb-2'>
             <Button
               onclick={()=>setShowCompleted(false)}
-              bgColor={"bg-green-500"}
+              bgColor={showCompleted ? "bg-[#5e5e5e]":"bg-green-500" }
               innerText={"To Do"}
             ></Button>
             <Button
               onclick={()=>setShowCompleted(true)}
-              bgColor={"bg-[#5e5e5e]"}
+              bgColor={showCompleted ? "bg-green-500": "bg-[#5e5e5e]"}
               innerText={"Completed"}
             ></Button>
 
