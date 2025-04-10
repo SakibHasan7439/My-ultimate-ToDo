@@ -9,7 +9,8 @@ const TodoField = ({updateTodoList, todos}) => {
         const title = form.title.value;
         const description = form.description.value;
         const status = "todo";
-        const newTodoTask = {title, description, status};
+        const uniqueId = Date.now() + Math.floor(Math.random() * 1000);
+        const newTodoTask = {title, description, status, uniqueId};
         updateTodoList([...todos, newTodoTask]);
         form.reset(); 
     }

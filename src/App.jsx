@@ -14,7 +14,7 @@ function App() {
     saveItem(newTodos); //adding data to localstorage
   }
   return (
-    <div className='bg-[#1b1b1b] h-screen pb-20'>
+    <div className='bg-[#1b1b1b] min-h-screen pb-20'>
       <div className='max-w-4xl w-full mx-auto'>
         <h1 className='text-center pt-4 text-2xl text-white md:text-3xl font-bold mb-6'>
           Add Your <span className='uppercase text-green-500'>todo</span>
